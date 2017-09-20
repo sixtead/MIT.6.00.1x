@@ -1,0 +1,50 @@
+# -*- coding: utf-8 -*-
+"""
+Consider the following sequence of expressions:
+
+animals = { 'a': ['aardvark'], 'b': ['baboon'], 'c': ['coati']}
+
+animals['d'] = ['donkey']
+animals['d'].append('dog')
+animals['d'].append('dingo')
+
+We want to write some simple procedures that work on dictionaries to return information.
+
+This time, write a procedure, called `biggest`, which returns the key corresponding to the entry with the largest number of values associated with it. If there is more than one such entry, return any one of the matching keys.
+
+Example usage:
+
+>>> biggest(animals)
+'d'
+
+If there are no values in the dictionary, `biggest` should return `None`.
+"""
+
+
+def biggest(aDict):
+    """Returns the key corresponding to the entry with the largest
+        number of values associated with it.
+
+    Vars:
+        aDict (dictionary): Given dictionary.
+
+    Returns:
+        string: key with largest number of values.
+    """
+    key = None
+    length = 0
+
+    for k in aDict:
+        if len(aDict[k]) > length:
+            length = len(aDict[k])
+            key = k
+
+    return key
+
+
+animals = { 'a': ['aardvark'], 'b': ['baboon'], 'c': ['coati']}
+animals['d'] = ['donkey']
+animals['d'].append('dog')
+animals['d'].append('dingo')
+
+print(biggest(animals))
