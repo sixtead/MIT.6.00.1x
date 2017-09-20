@@ -89,7 +89,8 @@ def calculate_monthly_payment(balance, annualInterestRate, months):
 
     while True:
         guess = (lowerMonthlyPayment + upperMonthlyPayment) / 2
-        totalBalance = balance_after_n_months(balance, guess, annualInterestRate, 12)
+        totalBalance = balance_after_n_months(balance, guess,
+                                              annualInterestRate, 12)
 
         if totalBalance > 0:
             lowerMonthlyPayment = guess
